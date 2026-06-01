@@ -73,20 +73,6 @@
                     <p class="text-[11px] text-slate-500 font-medium">06/08 台北市補教暨課照教育協會參訪交流</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-2">
-                <button onclick="window.print()" class="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 border border-slate-300 rounded-lg text-xs sm:text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
-                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                    </svg>
-                    <span class="hidden sm:inline">列印行程表</span>
-                </button>
-                <button onclick="toggleAddModal(true)" class="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 border border-transparent rounded-lg text-xs sm:text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 transition-colors focus:outline-none">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                    </svg>
-                    <span>自訂事項</span>
-                </button>
-            </div>
         </div>
     </header>
 
@@ -103,10 +89,9 @@
             <div class="relative z-10">
                 <div class="inline-flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 backdrop-blur-sm">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>雙北竹縣兩會深度交流</span>
+                    <span>補教參訪交流</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">主辦單位新竹縣補教協會熱烈歡迎台北市代表團！</h2>
-                <p class="text-brand-100 max-w-2xl text-base sm:text-lg mb-6">歡迎台北市代表團蒞臨指導，攜手開創課後教育新格局！</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">新竹縣補教協會  熱烈歡迎台北市代表團！</h2>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/10">
                     <div class="flex items-center space-x-3">
@@ -154,95 +139,13 @@
                         </div>
                         <div>
                             <p class="text-xs text-brand-200 font-medium">活動主旨</p>
-                            <p class="text-sm font-bold text-slate-100">少子化與工會籌備討論</p>
+                            <p class="text-sm font-bold text-slate-100">補教參訪交流</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 狀態看板與時間模擬控制器 -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 items-stretch">
-            
-            <!-- 實時狀態監測與模擬器 (左/中側寬度) -->
-            <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between relative overflow-hidden no-print">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="flex h-3.5 w-3.5 relative">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-brand-500"></span>
-                            </span>
-                            <h3 class="text-base font-bold text-slate-900">活動當日時間軸動態模擬</h3>
-                        </div>
-                        <span id="simulator-time-label" class="bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-xs font-semibold">
-                            當前模擬：09:00
-                        </span>
-                    </div>
-                    
-                    <p class="text-sm text-slate-500 mb-6">
-                        拖動下方拉桿以模擬當天參訪時間。系統將會動態高亮當下正在進行的活動項目，方便您在活動現場隨時追蹤。
-                    </p>
-
-                    <!-- 模擬拉桿 -->
-                    <div class="space-y-4 py-2">
-                        <input id="time-slider" type="range" min="510" max="900" step="10" value="510" 
-                               class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600 focus:outline-none">
-                        <div class="flex justify-between text-xs text-slate-400 px-1 font-medium">
-                            <span>08:30 (準備)</span>
-                            <span>11:50 (餐敘)</span>
-                            <span>15:00 (賦歸)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 當前進行中項目速覽 -->
-                <div id="current-status-banner" class="mt-6 bg-slate-50 border border-slate-100 rounded-xl p-4 flex items-start space-x-3">
-                    <div class="p-2 bg-brand-100 text-brand-700 rounded-lg">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-full inline-block mb-1">現正進行</span>
-                        <h4 id="current-active-title" class="text-sm font-bold text-slate-800">尚未開始</h4>
-                        <p id="current-active-desc" class="text-xs text-slate-500 mt-1">請向右拖動時間拉桿以模擬活動進度。</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 專業特設課程提示卡 (右側) -->
-            <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl shadow-md p-6 text-white flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center space-x-2 bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                        <svg class="w-4 h-4 text-amber-200 animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span>重要特設研討</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">工會籌組專業特闢課程</h3>
-                    <p class="text-amber-100 text-sm leading-relaxed mb-4">
-                        若各與會代表對於「工會籌組」之架構與程序有深入學習或輔導之需求，可於本次參訪後由兩會另外安排專業講習研討。
-                    </p>
-                </div>
-                
-                <div class="bg-black/15 p-4 rounded-xl border border-white/10 text-xs space-y-2">
-                    <div class="flex justify-between">
-                        <span class="text-amber-200 font-medium">授課講師：</span>
-                        <span class="font-bold">蔡士松 理事長</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-amber-200 font-medium">預估時數：</span>
-                        <span class="font-bold">至少 2.5 小時</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-amber-200 font-medium">預約方式：</span>
-                        <span class="font-bold">請於會後與秘書處登記</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!-- 搜尋與過濾面板 (非列印區) -->
         <div class="bg-white rounded-xl border border-slate-200 p-4 mb-8 shadow-sm flex flex-col sm:flex-row gap-4 items-center justify-between no-print">
@@ -279,7 +182,7 @@
             <!-- 右側側邊欄：特邀嘉賓、主辦單位、餐敘地點等 -->
             <div class="space-y-6">
 
-                <!-- 參訪活動流程海報 (全新加入) -->
+                <!-- 參訪活動流程海報 -->
                 <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm no-print">
                     <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center space-x-2">
                         <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -314,14 +217,12 @@
                     </p>
                     <div class="grid grid-cols-2 gap-2">
                         <a href="https://www.facebook.com/hcsea1/?locale=zh_TW" target="_blank" class="flex items-center justify-center space-x-2 p-2.5 bg-[#1877F2] hover:bg-[#166FE5] text-white rounded-xl text-xs font-bold transition-colors">
-                            <!-- Facebook Icon -->
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                             <span>官方粉絲專頁</span>
                         </a>
                         <a href="https://share.google/yDoDxMQMjL9WJUHuC" target="_blank" class="flex items-center justify-center space-x-2 p-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-colors">
-                            <!-- Map Pin Icon -->
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -350,6 +251,7 @@
                             </div>
                         </div>
 
+                        <!-- 林惠華副理事長已被改至第二順位 -->
                         <div class="flex items-start space-x-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm shrink-0">
                                 林
@@ -426,19 +328,6 @@
                     </div>
                 </div>
 
-                <!-- 回饋與筆記 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm no-print">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                        <span>現場速記 / 隨筆</span>
-                    </h3>
-                    <p class="text-xs text-slate-400 mb-3">輸入筆記將自動儲存在您的瀏覽器中，重新整理頁面也不會遺失。</p>
-                    <textarea id="notebook" rows="4" placeholder="在此記錄您的想法或提問細節..." 
-                              class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
-                </div>
-
             </div>
 
         </div>
@@ -447,61 +336,12 @@
 
     <!-- 頁尾 -->
     <footer class="bg-white border-t border-slate-200 py-8 mt-16 no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
-            <p>© 2026 新竹縣補習教育暨課後照顧服務協會。本流程網頁設計可完美適配手機與平板檢視。</p>
-            <p>如需調整參訪行程，請與推廣部聯繫。本網頁採用在地瀏覽器儲存技術，您的筆記與自訂事項均安全儲存於本機裝置。</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
+            <p>© 2026 新竹縣補教協會</p>
         </div>
     </footer>
 
-    <!-- 自訂事項彈出視窗 (Modal) -->
-    <div id="add-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden no-print">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 flex flex-col">
-            <div class="flex items-center justify-between mb-4">
-                <h3 class="text-lg font-bold text-slate-900">新增或自訂行程事項</h3>
-                <button onclick="toggleAddModal(false)" class="text-slate-400 hover:text-slate-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 mb-1">時間區間 (例如 10:00-10:30)</label>
-                    <input type="text" id="modal-time" placeholder="09:00-09:10" 
-                           class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-brand-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 mb-1">議程名稱 / 主講報告</label>
-                    <input type="text" id="modal-name" placeholder="請輸入主題名稱" 
-                           class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-brand-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 mb-1">重要細項內容 (每行一項)</label>
-                    <textarea id="modal-desc" rows="4" placeholder="1. 內容項目一&#10;2. 內容項目二" 
-                              class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-brand-500"></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 mb-1">活動屬性分類</label>
-                    <select id="modal-type" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-brand-500">
-                        <option value="report">專業簡報 / 報告</option>
-                        <option value="event">聯誼交流 / 午餐</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="mt-6 flex justify-end space-x-2">
-                <button onclick="toggleAddModal(false)" class="px-4 py-2 text-sm font-semibold text-slate-500 hover:text-slate-700 focus:outline-none">
-                    取消
-                </button>
-                <button onclick="addCustomSession()" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors focus:outline-none">
-                    確認新增
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 海報放大 Lightbox Modal (全新加入) -->
+    <!-- 海報放大 Lightbox Modal -->
     <div id="poster-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-4 hidden no-print" onclick="closePosterModal()">
         <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
             <button onclick="closePosterModal()" class="absolute -top-12 right-0 text-white hover:text-slate-300 focus:outline-none flex items-center gap-1.5 text-sm bg-white/10 hover:bg-white/20 transition-all px-3 py-1.5 rounded-full shadow-md">
@@ -526,7 +366,7 @@
     </div>
 
     <script>
-        // 初始化初始參訪行程 (參照 "0608台北市補教季課照教育協會參訪流程表.docx")
+        // 參訪行程 (參照 "0608台北市補教季課照教育協會參訪流程表.docx")
         const defaultSessions = [
             {
                 id: "s1",
@@ -618,39 +458,14 @@
             }
         ];
 
-        let sessions = [];
+        let sessions = [...defaultSessions];
         let activeFilter = 'all';
 
-        // 載入 localStorage 儲存的行程與隨筆
         window.onload = function() {
-            const storedSessions = localStorage.getItem('association_sessions');
-            if (storedSessions) {
-                sessions = JSON.parse(storedSessions);
-            } else {
-                sessions = [...defaultSessions];
-                localStorage.setItem('association_sessions', JSON.stringify(sessions));
-            }
-
-            const storedNotes = localStorage.getItem('association_notes');
-            if (storedNotes) {
-                document.getElementById('notebook').value = storedNotes;
-            }
-
             renderTimeline();
-            updateLiveSimulator(510); // 預設 08:30
-
-            // 監聽備忘筆記儲存
-            document.getElementById('notebook').addEventListener('input', function(e) {
-                localStorage.setItem('association_notes', e.target.value);
-            });
 
             // 監聽搜尋
             document.getElementById('search-input').addEventListener('input', renderTimeline);
-
-            // 監聽時間拉桿
-            document.getElementById('time-slider').addEventListener('input', function(e) {
-                updateLiveSimulator(parseInt(e.target.value));
-            });
         };
 
         // 顯示Toast提示
@@ -665,7 +480,7 @@
             }, 2500);
         }
 
-        // 開關海報 Lightbox Modal (全新加入)
+        // 開關海報 Lightbox Modal
         function openPosterModal() {
             document.getElementById('poster-modal').classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
@@ -674,83 +489,6 @@
         function closePosterModal() {
             document.getElementById('poster-modal').classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
-        }
-
-        // 開關新增事項Modal
-        function toggleAddModal(show) {
-            const modal = document.getElementById('add-modal');
-            if (show) {
-                modal.classList.remove('hidden');
-            } else {
-                modal.classList.add('hidden');
-                document.getElementById('modal-time').value = '';
-                document.getElementById('modal-name').value = '';
-                document.getElementById('modal-desc').value = '';
-            }
-        }
-
-        // 解析時間為分鐘 (例如 09:30 => 570)
-        function timeToMinutes(timeStr) {
-            const parts = timeStr.trim().split(':');
-            if (parts.length >= 2) {
-                return parseInt(parts[0]) * 60 + parseInt(parts[1]);
-            }
-            return 540;
-        }
-
-        // 新增自訂活動項目
-        function addCustomSession() {
-            const time = document.getElementById('modal-time').value.trim();
-            const name = document.getElementById('modal-name').value.trim();
-            const desc = document.getElementById('modal-desc').value.trim();
-            const type = document.getElementById('modal-type').value;
-
-            if (!time || !name) {
-                showToast('❌ 請填寫時間與議程名稱！');
-                return;
-            }
-
-            const timeParts = time.split('-');
-            const startMin = timeToMinutes(timeParts[0]);
-            const endMin = timeParts.length > 1 ? timeToMinutes(timeParts[1]) : startMin + 30;
-
-            const newSession = {
-                id: 'custom_' + Date.now(),
-                time: time,
-                startMin: startMin,
-                endMin: endMin,
-                name: name,
-                type: type,
-                details: desc ? desc.split('\n').map(d => d.trim()).filter(Boolean) : []
-            };
-
-            sessions.push(newSession);
-            sessions.sort((a, b) => a.startMin - b.startMin);
-
-            localStorage.setItem('association_sessions', JSON.stringify(sessions));
-            renderTimeline();
-            toggleAddModal(false);
-            showToast('✅ 已成功新增自訂議程');
-        }
-
-        // 刪除行程項目
-        function deleteSession(id) {
-            if (confirm('確定要刪除此項自訂行程嗎？')) {
-                sessions = sessions.filter(s => s.id !== id);
-                localStorage.setItem('association_sessions', JSON.stringify(sessions));
-                renderTimeline();
-                showToast('🗑️ 已成功刪除事項');
-            }
-        }
-
-        // 重設行程至預設
-        function resetSessions() {
-            if (confirm('確定要將行程重設為原始參訪設定嗎？您的自訂項目將會被清除。')) {
-                sessions = [...defaultSessions];
-                localStorage.setItem('association_sessions', JSON.stringify(sessions));
-                renderTimeline();
-                showToast('🔄 已還原為預設參訪流程');
-            }
         }
 
         // 篩選行程類別
@@ -774,55 +512,6 @@
             }
 
             renderTimeline();
-        }
-
-        function formatMinutesToTime(min) {
-            const h = Math.floor(min / 60);
-            const m = min % 60;
-            return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
-        }
-
-        // 動態模擬進度控制邏輯
-        function updateLiveSimulator(currentMinutes) {
-            const label = document.getElementById('simulator-time-label');
-            label.innerText = `當前模擬時間：${formatMinutesToTime(currentMinutes)}`;
-
-            let activeSession = null;
-
-            sessions.forEach(session => {
-                const element = document.getElementById(`card-${session.id}`);
-                const statusDot = document.getElementById(`dot-${session.id}`);
-                
-                if (!element) return;
-
-                element.classList.remove('ring-4', 'ring-brand-500/20', 'border-brand-500', 'bg-brand-50/40', 'opacity-50');
-                if (statusDot) statusDot.className = "w-4 h-4 rounded-full border-4 border-slate-100 shrink-0 z-10 transition-all bg-slate-300";
-
-                if (currentMinutes >= session.startMin && currentMinutes < session.endMin) {
-                    activeSession = session;
-                    element.classList.add('ring-4', 'ring-brand-500/20', 'border-brand-500', 'bg-brand-50/40');
-                    if (statusDot) statusDot.className = "w-4 h-4 rounded-full border-4 border-brand-200 shrink-0 z-10 transition-all bg-brand-600 animate-pulse";
-                } else if (currentMinutes >= session.endMin) {
-                    element.classList.add('opacity-50');
-                    if (statusDot) statusDot.className = "w-4 h-4 rounded-full border-4 border-slate-100 shrink-0 z-10 transition-all bg-emerald-500";
-                } else {
-                    if (statusDot) statusDot.className = "w-4 h-4 rounded-full border-4 border-slate-100 shrink-0 z-10 transition-all bg-slate-300";
-                }
-            });
-
-            const activeTitle = document.getElementById('current-active-title');
-            const activeDesc = document.getElementById('current-active-desc');
-
-            if (activeSession) {
-                activeTitle.innerText = `${activeSession.time} ${activeSession.name}`;
-                activeDesc.innerText = activeSession.speaker ? `講師/報告人：${activeSession.speaker}` : `活動類型：${activeSession.type === 'report' ? '專業簡報交流' : '聯誼互動'}`;
-            } else if (currentMinutes < 540) {
-                activeTitle.innerText = "活動尚未開始";
-                activeDesc.innerText = "行前準備，預計 09:00 正式與新竹縣補教協會主辦長官及代表相見。";
-            } else {
-                activeTitle.innerText = "今日行程已圓滿賦歸";
-                activeDesc.innerText = "感謝台北市與新竹縣補教協會的全體與會代表！";
-            }
         }
 
         // 渲染主要時間軸
@@ -859,8 +548,6 @@
             let html = '';
             
             filtered.forEach((session, idx) => {
-                const isCustom = session.id.startsWith('custom_');
-                
                 let detailsHtml = '';
                 if (session.details && session.details.length > 0) {
                     detailsHtml = `
@@ -892,7 +579,8 @@
                 html += `
                     <div class="relative flex items-start space-x-4 group" id="card-wrapper-${session.id}">
                         <div class="flex flex-col items-center h-full pt-1 shrink-0">
-                            <div id="dot-${session.id}" class="w-4 h-4 rounded-full border-4 border-slate-100 shrink-0 z-10 transition-all bg-slate-300"></div>
+                            <!-- 靜態圓點 -->
+                            <div id="dot-${session.id}" class="w-4 h-4 rounded-full border-4 border-slate-100 shrink-0 z-10 bg-brand-500"></div>
                             ${idx < filtered.length - 1 ? '<div class="w-0.5 bg-slate-200 h-full min-h-[140px] group-hover:bg-brand-200 transition-colors my-1 shrink-0"></div>' : ''}
                         </div>
 
@@ -906,16 +594,6 @@
                                     <span class="border px-2 py-0.5 rounded text-[10px] font-bold ${badgeColor}">
                                         ${badgeText}
                                     </span>
-                                </div>
-                                
-                                <div class="flex items-center space-x-2 no-print">
-                                    ${isCustom ? `
-                                        <button onclick="deleteSession('${session.id}')" class="text-slate-400 hover:text-rose-600 transition-colors p-1" title="刪除行程">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </button>
-                                    ` : ''}
                                 </div>
                             </div>
 
@@ -931,21 +609,7 @@
                 `;
             });
 
-            html += `
-                <div class="pt-4 flex justify-center no-print">
-                    <button onclick="resetSessions()" class="inline-flex items-center space-x-2 px-4 py-2 border border-slate-300 rounded-lg text-xs font-semibold text-slate-500 bg-white hover:bg-slate-50 transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
-                        </svg>
-                        <span>將參訪行程表回復至預設設定</span>
-                    </button>
-                </div>
-            `;
-
             container.innerHTML = html;
-
-            const currentMinVal = parseInt(document.getElementById('time-slider').value);
-            updateLiveSimulator(currentMinVal);
         }
     </script>
 </body>
